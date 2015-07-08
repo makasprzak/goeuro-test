@@ -1,0 +1,20 @@
+[
+  {
+    "_id": 398549,
+    "key": null,
+    "name": "Wrocław",
+    "fullName": "Wrocław, Poland",
+    "iata_airport_code": null,
+    "type": "location",
+    "country": "Poland",
+    "geo_position": {
+      "latitude": 51.1,
+      "longitude": 17.03333
+    },
+    "locationId": 30765,
+    "inEurope": true,
+    "countryCode": "PL",
+    "coreCountry": false,
+    "distance": null
+  }
+]
