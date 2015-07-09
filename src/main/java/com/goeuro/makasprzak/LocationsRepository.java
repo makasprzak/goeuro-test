@@ -3,6 +3,8 @@ package com.goeuro.makasprzak;
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpTransport;
+import com.google.inject.Inject;
+import com.google.inject.name.Named;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,7 +14,8 @@ public class LocationsRepository {
     private final HttpTransport transport;
     private final String endpointUrl;
 
-    public LocationsRepository(HttpTransport transport, String endpointUrl) {
+    @Inject
+    public LocationsRepository(HttpTransport transport, @Named("endpointUrl") String endpointUrl) {
         this.transport = transport;
         this.endpointUrl = endpointUrl;
     }

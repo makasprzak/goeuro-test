@@ -1,6 +1,7 @@
 package com.goeuro.makasprzak;
 
 import com.google.api.client.http.HttpTransport;
+import com.google.inject.Inject;
 
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -10,6 +11,7 @@ public class LocationsClient {
     private final LocationsCsvConverter csvConverter;
     private final LocationsRepository locationsRepository;
 
+    @Inject
     public LocationsClient(LocationsCsvConverter csvConverter, LocationsRepository locationsRepository) {
         this.csvConverter = csvConverter;
         this.locationsRepository = locationsRepository;

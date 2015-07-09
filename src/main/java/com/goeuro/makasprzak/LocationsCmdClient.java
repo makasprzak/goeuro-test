@@ -1,5 +1,7 @@
 package com.goeuro.makasprzak;
 
+import com.google.inject.Inject;
+
 public class LocationsCmdClient {
     public static final String MESSAGE_SUFFIX = " successfully created";
     private final CmdLineInterpreter cmdLineInterpreter;
@@ -7,10 +9,7 @@ public class LocationsCmdClient {
     private final FileWriter fileWriter;
     private final LocationsClient client;
 
-    public static void main(String[] args) {
-
-    }
-
+    @Inject
     public LocationsCmdClient(
             CmdLineInterpreter cmdLineInterpreter,
             FileNameProvider fileNameProvider,
