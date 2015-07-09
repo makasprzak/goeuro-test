@@ -2,8 +2,49 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d22b993-ad6f-4405-984c-dde5455fa432" name="Default" comment="">
+      <change type="DELETED" beforePath="C:\Git\goeuro\.idea\.name" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\.idea\compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\.idea\copyright\profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\.idea\encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\.idea\libraries\Maven__com_google_code_findbugs_jsr305_1_3_9.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\.idea\libraries\Maven__com_google_code_gson_gson_2_3_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\.idea\libraries\Maven__com_google_http_client_google_http_client_1_20_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\.idea\libraries\Maven__com_google_http_client_google_http_client_test_1_20_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\.idea\libraries\Maven__commons_codec_commons_codec_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\.idea\libraries\Maven__commons_io_commons_io_2_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\.idea\libraries\Maven__commons_logging_commons_logging_1_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\.idea\libraries\Maven__junit_junit_4_12.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\.idea\libraries\Maven__org_apache_httpcomponents_httpclient_4_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\.idea\libraries\Maven__org_apache_httpcomponents_httpcore_4_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\.idea\libraries\Maven__org_easytesting_fest_assert_1_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\.idea\libraries\Maven__org_easytesting_fest_util_1_1_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\.idea\libraries\Maven__org_hamcrest_hamcrest_core_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\.idea\misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\.idea\modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\.idea\scopes\scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\.idea\uiDesigner.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\.idea\vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\.idea\workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\goeuro.iml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\target\MANIFEST.MF" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\target\classes\com\goeuro\makasprzak\GeoPosition.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\target\classes\com\goeuro\makasprzak\Location.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\target\classes\com\goeuro\makasprzak\LocationsClient$BuildStep.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\target\classes\com\goeuro\makasprzak\LocationsClient$Builder.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\target\classes\com\goeuro\makasprzak\LocationsClient$EndpointUrlStep.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\target\classes\com\goeuro\makasprzak\LocationsClient$TransportStep.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\target\classes\com\goeuro\makasprzak\LocationsClient.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\target\classes\com\goeuro\makasprzak\LocationsClientException.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\target\classes\com\goeuro\makasprzak\LocationsCsvConverter.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\target\test-classes\com\goeuro\makasprzak\LocationsClientTest$1$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\target\test-classes\com\goeuro\makasprzak\LocationsClientTest$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\target\test-classes\com\goeuro\makasprzak\LocationsClientTest$Executor.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\target\test-classes\com\goeuro\makasprzak\LocationsClientTest.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\target\test-classes\potsdam.csv" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\target\test-classes\potsdam.json" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\target\test-classes\wroclaw.csv" afterPath="" />
+      <change type="DELETED" beforePath="C:\Git\goeuro\target\test-classes\wroclaw.json" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="goeuro.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,8 +105,8 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.042713568" vertical-offset="0" max-vertical-offset="398">
-              <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.085427135" vertical-offset="0" max-vertical-offset="398">
+              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -859,12 +900,12 @@
       <updated>1436373652299</updated>
       <workItem from="1436373663926" duration="19254000" />
       <workItem from="1436455716263" duration="36000" />
-      <workItem from="1436455777230" duration="52000" />
+      <workItem from="1436455777230" duration="703000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19342000" />
+    <option name="totallyTimeSpent" value="19993000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1343,8 +1384,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.042713568" vertical-offset="0" max-vertical-offset="398">
-          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.085427135" vertical-offset="0" max-vertical-offset="398">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding />
         </state>
       </provider>
