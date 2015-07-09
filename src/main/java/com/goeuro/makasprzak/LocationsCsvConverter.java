@@ -14,14 +14,18 @@ public class LocationsCsvConverter {
     private static final String HEADER = "_id, name, type, latitude, longitude";
     private final Gson gson = new Gson();
 
-    public void convert(InputStream jsonStream, OutputStream outputStream) throws IOException {
+    public void convert(InputStream jsonStream, OutputStream outputStream) {
         BufferedWriter writer = createWriter(outputStream);
         JsonReader jsonReader = createReader(jsonStream);
-        writeHeader(writer);
-        covertLocationsArray(writer, jsonReader);
-        jsonReader.close();
-        writer.flush();
-        writer.close();
+        try {
+            writeHeader(writer);
+            covertLocationsArray(writer, jsonReader);
+            jsonReader.close();
+            writer.flush();
+            writer.close();
+        } catch (IOException e) {
+            throw new LocationsClientException("GoEuro returned malformed response", e);
+        }
     }
 
     private void writeHeader(BufferedWriter writer) throws IOException {

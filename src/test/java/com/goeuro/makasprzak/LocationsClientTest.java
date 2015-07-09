@@ -53,7 +53,22 @@ public class LocationsClientTest {
                     .writeCsvForLocationString("any", new ByteArrayOutputStream());
             fail("Expected " + LocationsClientException.class);
         } catch (LocationsClientException e) {
-            assertThat(e.getCause()).hasMessage("503 Service Unavailable");
+            assertThat(e).hasMessage("503 Service Unavailable");
+        }
+
+    }
+
+    @Test
+    public void shouldThrowErrorForBadRequest() throws Exception {
+        try {
+            locationsClient()
+                    .withTransport(mockTransport(badRequest()))
+                    .withEndpointUrl(HttpTesting.SIMPLE_URL)
+                    .build()
+                    .writeCsvForLocationString("#$", new ByteArrayOutputStream());
+            fail("Expected " + LocationsClientException.class);
+        } catch (LocationsClientException e) {
+            assertThat(e).hasMessage("400 Bad Request");
         }
 
     }
@@ -68,13 +83,25 @@ public class LocationsClientTest {
                     .writeCsvForLocationString("Wroclaw, Poland", new ByteArrayOutputStream());
             fail("Expected " + LocationsClientException.class);
         } catch (LocationsClientException e) {
-            assertThat(e.getCause()).hasMessage("500 GoEuro returned malformed response");
+            assertThat(e).hasMessage("GoEuro returned malformed response");
         }
 
     }
 
+    @Test
+    public void shouldHandlePercentCharacterInQueryString() throws Exception {
+        locationsClient()
+                .withTransport(mockTransport(responseForUrl("[]", HttpTesting.SIMPLE_URL + "Quality%20100p")))
+                .withEndpointUrl(HttpTesting.SIMPLE_URL)
+                .build()
+                .writeCsvForLocationString("Quality 100%", new ByteArrayOutputStream());
+    }
+
     private Executor serviceUnavailable() {
         return any -> new MockLowLevelHttpResponse().setStatusCode(503).setReasonPhrase("Service Unavailable");
+    }
+    private Executor badRequest() {
+        return any -> new MockLowLevelHttpResponse().setStatusCode(400).setReasonPhrase("Bad Request");
     }
 
     private Executor responseAtPathForUrl(String expectedResponsePath, String expectedUrl) {

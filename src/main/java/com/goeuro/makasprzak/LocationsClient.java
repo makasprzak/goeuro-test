@@ -1,42 +1,28 @@
 package com.goeuro.makasprzak;
 
-import com.google.api.client.http.GenericUrl;
-import com.google.api.client.http.HttpResponseException;
 import com.google.api.client.http.HttpTransport;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
 public class LocationsClient {
 
     private final LocationsCsvConverter csvConverter;
-    private final HttpTransport transport;
-    private final String endpointUrl;
+    private final LocationsRepository locationsRepository;
 
-    public LocationsClient(LocationsCsvConverter csvConverter, HttpTransport transport, String endpointUrl) {
+    public LocationsClient(LocationsCsvConverter csvConverter, LocationsRepository locationsRepository) {
         this.csvConverter = csvConverter;
-        this.transport = transport;
-        this.endpointUrl = endpointUrl;
+        this.locationsRepository = locationsRepository;
     }
 
     public void writeCsvForLocationString(String locationString, OutputStream os) {
-        try {
-            //TODO refactor - extract LocationsHttpResource together with exception Handling
-            InputStream is = transport.createRequestFactory()
-                    .buildGetRequest(getUrl(locationString))
-                    .execute().getContent();
-            //TODO handle exception within converterm
-            csvConverter.convert(is, os);
-        } catch (HttpResponseException e) {
-            throw new LocationsClientException(e);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        String escapedString = handlePercentCharacter(locationString);
+        InputStream is = locationsRepository.getLocationsJsonStream(escapedString);
+        csvConverter.convert(is, os);
     }
 
-    private GenericUrl getUrl(String locationString) {
-        return new GenericUrl(endpointUrl + locationString);
+    private String handlePercentCharacter(String locationString) {
+        return locationString.replaceAll("%","p");
     }
 
     public static interface TransportStep {
@@ -79,9 +65,7 @@ public class LocationsClient {
         public LocationsClient build() {
             return new LocationsClient(
                     new LocationsCsvConverter(),
-                    this.transport,
-                    this.endpointUrl
-            );
+                    new LocationsRepository(transport, endpointUrl));
         }
     }
 }
