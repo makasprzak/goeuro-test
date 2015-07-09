@@ -15,7 +15,7 @@ public class LocationsClient {
         this.locationsRepository = locationsRepository;
     }
 
-    public void writeCsvForLocationString(String locationString, OutputStream os) {
+    public void writeCsvStreamForLocationString(OutputStream os, String locationString) {
         String escapedString = handlePercentCharacter(locationString);
         InputStream is = locationsRepository.getLocationsJsonStream(escapedString);
         csvConverter.convert(is, os);

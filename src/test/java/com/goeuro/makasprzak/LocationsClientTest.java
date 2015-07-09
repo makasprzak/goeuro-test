@@ -26,7 +26,7 @@ public class LocationsClientTest {
                 .withTransport(mockTransport(responseAtPathForUrl("/potsdam.json", HttpTesting.SIMPLE_URL + "Potsdam")))
                 .withEndpointUrl(HttpTesting.SIMPLE_URL)
                 .build()
-                .writeCsvForLocationString("Potsdam", outputStream);
+                .writeCsvStreamForLocationString(outputStream, "Potsdam");
         assertThat(outputStream.toString()).isEqualTo(read("/potsdam.csv"));
 
     }
@@ -38,7 +38,7 @@ public class LocationsClientTest {
                 .withTransport(mockTransport(responseAtPathForUrl("/wroclaw.json", HttpTesting.SIMPLE_URL + "Wroclaw,%20Poland")))
                 .withEndpointUrl(HttpTesting.SIMPLE_URL)
                 .build()
-                .writeCsvForLocationString("Wroclaw, Poland", outputStream);
+                .writeCsvStreamForLocationString(outputStream, "Wroclaw, Poland");
         assertThat(outputStream.toString()).isEqualTo(read("/wroclaw.csv"));
 
     }
@@ -50,7 +50,7 @@ public class LocationsClientTest {
                     .withTransport(mockTransport(serviceUnavailable()))
                     .withEndpointUrl(HttpTesting.SIMPLE_URL)
                     .build()
-                    .writeCsvForLocationString("any", new ByteArrayOutputStream());
+                    .writeCsvStreamForLocationString(new ByteArrayOutputStream(), "any");
             fail("Expected " + LocationsClientException.class);
         } catch (LocationsClientException e) {
             assertThat(e).hasMessage("503 Service Unavailable");
@@ -65,7 +65,7 @@ public class LocationsClientTest {
                     .withTransport(mockTransport(badRequest()))
                     .withEndpointUrl(HttpTesting.SIMPLE_URL)
                     .build()
-                    .writeCsvForLocationString("#$", new ByteArrayOutputStream());
+                    .writeCsvStreamForLocationString(new ByteArrayOutputStream(), "#$");
             fail("Expected " + LocationsClientException.class);
         } catch (LocationsClientException e) {
             assertThat(e).hasMessage("400 Bad Request");
@@ -80,7 +80,7 @@ public class LocationsClientTest {
                     .withTransport(mockTransport(responseForUrl("!@#$%^&&&&*()_+", HttpTesting.SIMPLE_URL + "Wroclaw,%20Poland")))
                     .withEndpointUrl(HttpTesting.SIMPLE_URL)
                     .build()
-                    .writeCsvForLocationString("Wroclaw, Poland", new ByteArrayOutputStream());
+                    .writeCsvStreamForLocationString(new ByteArrayOutputStream(), "Wroclaw, Poland");
             fail("Expected " + LocationsClientException.class);
         } catch (LocationsClientException e) {
             assertThat(e).hasMessage("GoEuro returned malformed response");
@@ -94,7 +94,7 @@ public class LocationsClientTest {
                 .withTransport(mockTransport(responseForUrl("[]", HttpTesting.SIMPLE_URL + "Quality%20100p")))
                 .withEndpointUrl(HttpTesting.SIMPLE_URL)
                 .build()
-                .writeCsvForLocationString("Quality 100%", new ByteArrayOutputStream());
+                .writeCsvStreamForLocationString(new ByteArrayOutputStream(), "Quality 100%");
     }
 
     private Executor serviceUnavailable() {
